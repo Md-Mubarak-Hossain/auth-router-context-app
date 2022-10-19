@@ -4,6 +4,8 @@ import Main from './components/Layout/Main';
 import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
+import PrivateRouter from './components/Private/PrivateRouter';
+import Order from './components/Order';
 
 function App() {
   const router = createBrowserRouter([
@@ -13,7 +15,11 @@ function App() {
       children: [
         {
           path: '/',
-          element: <Home></Home>
+          element: <PrivateRouter><Home></Home></PrivateRouter>
+        },
+        {
+          path: '/order',
+          element: <PrivateRouter><Order></Order></PrivateRouter>
         },
         {
           path: '/login',
